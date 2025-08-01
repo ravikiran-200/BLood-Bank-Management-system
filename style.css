@@ -1,0 +1,487 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333; /* Ensuring base text color is defined */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Allows footer to stick to bottom */
+    min-height: 100vh;
+}
+
+/* Specific body style for login/signup pages to center content */
+/* This class should be applied to the <body> tag in login.html and signup.html */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- Login/Signup Page Specific Container Styles --- */
+.login-container {
+    background-color: white;
+    padding: 2.5rem; /* p-10 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 2rem; /* text-4xl */
+    font-weight: 700; /* font-extrabold */
+    color: #dc2626; /* Tailwind red-600 */
+    margin-bottom: 1.5rem;
+}
+
+/* Specific form-group styles for login/signup (can be applied globally if desired) */
+.login-container .form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+.login-container .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+.login-container .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1rem;
+}
+.login-container .form-group input:focus {
+    border-color: #ef4444;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.btn-login {
+    background-color: #22c55e; /* Tailwind green-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: #16a34a; /* Darker green */
+    transform: translateY(-1px);
+}
+
+/* --- General Application Layout and Components --- */
+
+header {
+    background-color: #dc2626; /* Tailwind red-600 */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a,
+nav ul li button { /* Apply styles to logout buttons in nav */
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: 600;
+    background: none; /* For buttons */
+    border: none; /* For buttons */
+    cursor: pointer; /* For buttons */
+}
+
+nav ul li a:hover,
+nav ul li button:hover,
+nav ul li a.active {
+    background-color: #b91c1c; /* Tailwind red-700 */
+}
+
+main {
+    flex-grow: 1; /* Allows main content to fill available space */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.hidden {
+    display: none !important; /* Force hide elements */
+}
+
+.section-title {
+    font-size: 1.875rem; /* Tailwind text-3xl */
+    font-weight: 700; /* Tailwind font-bold */
+    color: #dc2626; /* Tailwind red-600 */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Styles (reused by various forms) */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+/* General input/select/textarea styles */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4b5563; /* Tailwind gray-700 */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.375rem; /* Tailwind rounded-md */
+    box-sizing: border-box; /* Include padding/border in width */
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ef4444; /* Tailwind red-500 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Button Styles (general purpose) */
+.btn-primary {
+    background-color: #22c55e; /* Tailwind green-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary:hover {
+    background-color: #16a34a; /* Tailwind green-600 */
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-danger {
+    background-color: #ef4444; /* Tailwind red-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626; /* Tailwind red-600 */
+}
+
+.btn-secondary { /* Re-purposed to be a general action button, not just search */
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #2563eb; /* Tailwind blue-600 */
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto; /* Allows horizontal scrolling for large tables */
+    margin-top: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Ensure table is wide enough for content */
+}
+
+table th,
+table td {
+    border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table th {
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    font-weight: 600;
+    color: #374151; /* Tailwind gray-700 */
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+table tr:hover {
+    background-color: #f0f2f5;
+}
+
+.table-data { /* Class for table data cells as per your JS */
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+}
+
+/* Dashboard Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #fef2f2; /* Tailwind red-50 */
+    border: 1px solid #fca5a5; /* Tailwind red-300 */
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h3 {
+    font-size: 1.25rem; /* Tailwind text-xl */
+    font-weight: 600;
+    color: #dc2626; /* Tailwind red-600 */
+    margin-bottom: 0.75rem;
+}
+
+.stat-card p {
+    font-size: 2.5rem; /* Tailwind text-5xl */
+    font-weight: 700;
+    color: #4b5563; /* Tailwind gray-700 */
+}
+
+/* Recent Lists (Dashboard) */
+.recent-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-list li {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay, .modal { /* Combined to handle both names for modal background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 500px; /* Keep max-width here */
+    width: 90%;
+    position: relative;
+}
+
+.close-button, .modal-close-btn { /* Combined to handle both names for close button */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.close-button:hover, .modal-close-btn:hover {
+    color: #374151;
+}
+
+/* --- Message Box Styles (Unified) --- */
+/* The base styles for all message boxes */
+.message-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem; /* For login page */
+    margin-bottom: 1rem; /* For main content messages */
+    border: 1px solid; /* Generic border */
+    display: none; /* Hidden by default */
+    text-align: left; /* Default text alignment */
+    font-weight: 500;
+}
+
+/* Specific styles for different message types */
+.message-box.success {
+    background-color: #d1fae5; /* Green-100 */
+    color: #065f46; /* Green-800 */
+    border-color: #34d399; /* Green-400 */
+}
+
+.message-box.error {
+    background-color: #fee2e2; /* Red-100 */
+    color: #991b1b; /* Red-800 */
+    border-color: #f87171; /* Red-400 */
+}
+
+.message-box.info {
+    background-color: #e0f2fe; /* Blue-100 */
+    color: #1e40af; /* Blue-800 */
+    border-color: #60a5fa; /* Blue-400 */
+}
+
+.message-box.warning {
+    background-color: #fffbeb; /* Yellow-100 */
+    color: #92400e; /* Yellow-800 */
+    border-color: #fbbf24; /* Yellow-400 */
+}
+
+/* For the message-modal, specific classes will be added for styling */
+#message-modal.success .modal-content { border-top: 4px solid #34d399; }
+#message-modal.error .modal-content { border-top: 4px solid #f87171; }
+#message-modal.info .modal-content { border-top: 4px solid #60a5fa; }
+#message-modal.warning .modal-content { border-top: 4px solid #fbbf24; }
+
+/* Styles for table action buttons (Font Awesome icons and text) */
+.text-blue-600 { color: #2563eb; } /* Tailwind blue-600 */
+.hover\:text-blue-900:hover { color: #1e3a8a; } /* Tailwind blue-900 */
+.text-red-600 { color: #dc2626; } /* Tailwind red-600 */
+.hover\:text-red-900:hover { color: #7f1d1d; } /* Tailwind red-900 */
+.text-green-600 { color: #16a34a; } /* Tailwind green-600 */
+.hover\:text-green-900:hover { color: #0f6c3d; } /* Tailwind green-900 */
+.mr-2 { margin-right: 0.5rem; } /* Common utility class */
+
+/* Styling for the confirmation buttons within the message modal */
+#message-modal .mt-4 button {
+    /* Styles for dynamically added buttons in message modal */
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* --- Additional/More Specific Styles from one of the snippets --- */
+/* These were less common or had slight variations, now integrated */
+
+.dashboard-card {
+    background-color: white;
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* transition-transform */
+    transform: scale(1); /* initial transform */
+}
+.dashboard-card:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.input-field { /* Specific style for fields often found in forms */
+    width: 100%;
+    padding: 0.75rem; /* p-3 */
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    outline: none; /* focus:outline-none */
+}
+.input-field:focus {
+    border-color: #ef4444; /* focus:ring-red-500 */
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5); /* focus:ring-2 focus:ring-red-500 */
+}
+
+.table-header { /* Specific style for table heading cells */
+    padding: 0.75rem 1.5rem; /* px-6 py-3 */
+    text-align: left;
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 500; /* font-medium */
+    color: #6b7280; /* text-gray-500 */
+    text-transform: uppercase; /* uppercase */
+    letter-spacing: 0.05em; /* tracking-wider */
+}

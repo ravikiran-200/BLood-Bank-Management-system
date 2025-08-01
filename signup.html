@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBMS - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css"> </head>
+<body class="login-body">
+    <div class="login-container">
+        <h1 class="text-2xl font-bold text-center mb-6">Create Account</h1>
+        <form id="signup-form">
+            <div class="mb-4">
+                <label for="signup-username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+                <input type="text" id="signup-username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="signup-password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                <input type="password" id="signup-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-6">
+                <label for="signup-confirm-password" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password:</label>
+                <input type="password" id="signup-confirm-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Sign Up</button>
+            <div id="signup-message" class="message-box mt-4 hidden"></div>
+        </form>
+        <p class="mt-6 text-center text-gray-600">
+            Already have an account? <a href="login.html" class="text-blue-600 hover:underline">Log in here</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>
